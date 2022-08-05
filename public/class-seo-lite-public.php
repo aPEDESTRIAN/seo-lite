@@ -59,7 +59,7 @@ class Seo_Lite_Public
 			if ($bing_code = get_option('seo_lite_bing_code'))		$meta_tags['msvalidate.01'] = $bing_code;
 		}
 
-		return apply_filters('seo_lite_meta_tags', $meta_tags);
+		return $meta_tags;
 	}
 
 	// Attempts to get the content for the og:description tag
