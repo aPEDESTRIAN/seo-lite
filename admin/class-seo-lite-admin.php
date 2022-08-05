@@ -41,13 +41,13 @@ class Seo_Lite_Admin
 		add_settings_section('seo_lite_optional', 'Optional Settings', null, 'seo-lite-options-page');
 
 		// Register settings
-		// register_setting(string $option_group, string $option_name)
-		register_setting('seo_lite_settings_option_group', 'seo_lite_site_description');
-		register_setting('seo_lite_settings_option_group', 'seo_lite_add_title_tag');
-		register_setting('seo_lite_settings_option_group', 'seo_lite_google_code');
-		register_setting('seo_lite_settings_option_group', 'seo_lite_bing_code');
-		register_setting('seo_lite_settings_option_group', 'seo_lite_facebook_app_id');
-		register_setting('seo_lite_settings_option_group', 'seo_lite_twitter_username');
+		// register_setting(string $option_group, string $option_name, array $args)
+		register_setting('seo_lite_settings_option_group', 'seo_lite_site_description',	array('type' => 'string', 'sanitize_callback' => 'sanitize_textarea_field'));
+		register_setting('seo_lite_settings_option_group', 'seo_lite_add_title_tag',	array('type' => 'boolean','sanitize_callback' => function($val) { return intval($val) > 0 ? 1 : 0; }));
+		register_setting('seo_lite_settings_option_group', 'seo_lite_google_code',		array('type' => 'string', 'sanitize_callback' => 'sanitize_text_field'));
+		register_setting('seo_lite_settings_option_group', 'seo_lite_bing_code',		array('type' => 'string', 'sanitize_callback' => 'sanitize_text_field'));
+		register_setting('seo_lite_settings_option_group', 'seo_lite_facebook_app_id',	array('type' => 'string', 'sanitize_callback' => 'sanitize_text_field'));
+		register_setting('seo_lite_settings_option_group', 'seo_lite_twitter_username',	array('type' => 'string', 'sanitize_callback' => 'sanitize_text_field'));
 
 		// Add the registered settings fields to sections
 		// add_settings_field(string $option_name,		string $title,				callable $callback (field input),		string $page,				string $section)
