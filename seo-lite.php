@@ -6,7 +6,7 @@
  * Plugin Name:			SEO Lite
  * Plugin URI:			https://github.com/apedestrian/SEO-Lite
  * Description:			Adds all of the best practice SEO meta tags to you site.
- * Version:				1.0.1
+ * Version:				1.0.2
  * Author:				apedestrian
  * Author URI:			https://github.com/apedestrian
  * License:				GPL-2.0+

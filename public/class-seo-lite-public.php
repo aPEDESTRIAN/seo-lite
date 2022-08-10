@@ -20,7 +20,7 @@ class Seo_Lite_Public
 
 		foreach ($meta_tags as $property => $content)
 		{
-			echo '<meta property="' . esc_attr($property) . '" content="' . esc_attr($content) . '">';
+			echo '<meta property="' . esc_attr($property) . '" content="' . esc_html(esc_attr($content)) . '">';
 		}
 
 		?>
