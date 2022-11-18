@@ -1,25 +1,25 @@
-=== Plugin Name ===
-Contributors: apedestrian
-Tags: seo, facebook, twitter
-Tested up to: 6.0
-Stable tag: 1.0.2
+=== SEO Lite ===
+Contributors: aPEDESTRIAN
+Donate link: https://www.paypal.com/donate/?hosted_button_id=JTBPY8ZWAXG6N
+Stable tag: 2.0.0
+Tested up to: 6.1.1
+Tags: seo, open graph, og
 License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Adds all of the best practice SEO meta tags to you site.
+Adds all of the basic Open Graph meta tags to the site head.
 
 == Description ==
 
-SEO Lite is meant to be that: lite. Adds all the best practive SEO meta tags and nothing more. It is reccomended that you fill out the Google and Bing verification code in the settings section. Additionally, there is a setting to add your Facebook App ID or Twitter Username for analytics on these platforms.
+SEO Lite is meant to be that: lite. In under 100 lines of code, SEO Lite adds the following tags:
 
-== For Developers ==
-
-Available Filters:
-
-* seo_lite_meta_title:		SEO Lite will use wp_get_document_title() unless overriden with this filter
-* seo_lite_meta_description:	SEO Lite will use the excerpt on pages/posts, archive descriptions on
-				archive pages, and the value you set for Site Description inside SEO Lite Settings.
-* seo_lite_meta_type:		SEO Lite will use the type article on pages/posts and website everywhere else unless
-				overriden with this filter
-* seo_lite_meta_attachment_id:	SEO Lite will use a thumbnail on pages/posts and your site icon everywhere else
-				unless overriden with this filter
+* og:locale - Uses get_locale()
+* og:site_name - Uses get_bloginfo('name')
+* og:title - Uses wp_get_document_title()
+* og:description (trimmed to 200 chars) - Uses get_bloginfo('description') on the front page, get_the_excerpt() for posts/pages, and get_the_archive_description() if availble on archive pages
+* og:url - URL of page
+* og:type - Uses 'article' on posts/pages and 'website' everywhere else
+* article:published_time - Uses get_the_date('c') on posts/pages
+* article:modified_time - Uses get_the_modified_date('c') on posts/pages
+* og:image - Uses featured image on posts/pages and the site icon on the front page
+* og:image:{type/width/height/alt} - Added if we have an 'og:image' (only adds 'alt' if availble)
